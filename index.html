@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genoz Vontage V7.0</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            display: none; /* Awalnya disembunyikan */
+        }
+        
+        .login-container {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #4a8cff;
+            margin-bottom: 30px;
+            font-size: 28px;
+            text-shadow: 0 0 10px rgba(74, 140, 255, 0.5);
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #aaaaaa;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            background-color: #2a2a2a;
+            border: 1px solid #4a8cff;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+        }
+        
+        .login-btn {
+            background-color: #4a8cff;
+            color: #121212;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .login-btn:hover {
+            background-color: #3a7cdf;
+            transform: translateY(-2px);
+        }
+        
+        .error-message {
+            color: #ff4444;
+            margin-top: 10px;
+            display: none;
+        }
+        
+        /* Style untuk container utama setelah login */
+        .target-input {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        
+        .target-input input {
+            width: 100%;
+            padding: 10px;
+            background-color: #2a2a2a;
+            border: 1px solid #4a8cff;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+        }
+        
+        .mode-selector {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .mode-btn {
+            background-color: #2a2a2a;
+            color: #ffffff;
+            border: 2px solid #4a8cff;
+            border-radius: 5px;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .mode-btn:hover {
+            background-color: #4a8cff;
+            color: #121212;
+            transform: translateY(-2px);
+        }
+        
+        .subtitle {
+            color: #aaaaaa;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .result-message {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        
+        .success {
+            background-color: #2e7d32;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container" id="loginContainer">
+        <h1>Genoz Vontage V7.0</h1>
+        
+        <div class="input-group">
+            <label for="username">Masukin Nama</label>
+            <input type="text" id="username" placeholder="genozvontagev7">
+        </div>
+        
+        <div class="input-group">
+            <label for="password">Masukin Password</label>
+            <input type="password" id="password" placeholder="vontage7">
+        </div>
+        
+        <button class="login-btn" id="loginBtn">MASUK</button>
+        <div id="loginError" class="error-message">Nama atau Password salah!</div>
+    </div>
+
+    <div class="container" id="mainContainer">
+        <h1>Genoz Vontage V7.0</h1>
+        <div class="subtitle">Pilih Mode Anda !!!</div>
+        
+        <div class="target-input">
+            <input type="text" id="targetNumber" placeholder="Masukkan No Target 628xxx">
+        </div>
+        
+        <div class="mode-selector">
+            <button class="mode-btn" id="androsBtn">ANDROS MODE</button>
+            <button class="mode-btn" id="iosBtn">IOS MODE</button>
+            <button class="mode-btn" id="androsDelayBtn">ANDROS DELAY HARD MODE</button>
+        </div>
+        
+        <div id="resultMessage" class="result-message success">Berhasil Menyapa Target 😈🔥</div>
+    </div>
+
+    <!-- File JavaScript eksternal -->
+    <script src="functions.js"></script>
+</body>
+  </html>
